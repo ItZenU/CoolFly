@@ -86,4 +86,3 @@ use pocketmine\utils\TextFormat;
 			}
 		}
 	}
-}
