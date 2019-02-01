@@ -27,9 +27,6 @@ use pocketmine\utils\TextFormat;
 	class Main extends PluginBase implements Listener{
 	
 		const PREFIX = TextFormat::RED . "CoolFly" . TextFormat::WHITE . " > " . TextFormat::GOLD;
-	
-	public function __construct(Main $main){
-		parent::__construct($main, "fly", "Enable yourself or someone else to fly", ["fly"]);
 	}
 
 	public function execute(CommandSender $sender, string $commandLabel, array $args) : boool{
