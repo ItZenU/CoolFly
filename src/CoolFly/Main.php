@@ -12,7 +12,7 @@
 
 declare(strict_types=1);
 
-namespace Coolfly\Main;
+namespace Coolfly;
 
 use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
