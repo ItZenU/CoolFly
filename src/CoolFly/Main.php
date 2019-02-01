@@ -40,12 +40,12 @@ use pocketmine\utils\TextFormat;
 		if(!$sender->hasPermission("fly.use")){
 				if(!$sender->isCreative()){
 					$sender->setAllowFlight(true);
-					$sedner->setFlying(true)
+					$sedner->setFlying(true);
 					$sender->sendMessage(Main::PREFIX . TextFormat::GOLD . "You may now fly!");
 				}else{
 					$sender->setAllowFlight(false)
 					$sender->setFlying(false)
-					$sender->sendMessage(Main::PREFIX . TextFormat::RED . "Fly has been disabled!")
+					$sender->sendMessage(Main::PREFIX . TextFormat::RED . "Fly has been disabled!");
 					
 				}else{
 					   $sender->sendMessage(Main::PREFIX . TextFormat::RED . "You can only use this command in survival");
@@ -78,7 +78,7 @@ use pocketmine\utils\TextFormat;
 						if($damager instanceof Player){
 						if(!$damager->isCreative()){
 						$damager->getAllowFlight()){
-						$damager->sendMessage(Main::PREFIX . TextFormat::RED "Flight was disabled do to combat!")
+						$damager->sendMessage(Main::PREFIX . TextFormat::RED "Flight was disabled do to combat!");
 						$damager->setAllowFlight(false);
 						$damager->setFlying(false);
 					}
