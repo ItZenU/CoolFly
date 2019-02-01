@@ -14,18 +14,19 @@ declare(strict_types=1);
 
 namespace Coolfly\Main;
 
-use pocketmine\PluginBase;
+use pocketmine\plugin\PluginBase;
 use pocketmine\event\Listener;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\command\Command;
 use pocketmine\command\CommandSender;
 use pocketmine\Player;
+use pocketmine\Server;
 use pocketmine\utils\TextFormat;
 
-class Main extends PluginBase implements Listener{
+class Main extends PluginBase implements Listener {
 	
-     const PREFIX = TextFormat::RED . "CoolFly" . TextFormat::WHITE . " > " . TextFormat::GOLD;
+     public const PREFIX = TextFormat::RED . "CoolFly" . TextFormat::WHITE . " > " . TextFormat::GOLD;
 	
      public function onEnable(){
          $this->getLogger()->info("Coolfly has been enabled");
@@ -47,11 +48,6 @@ class Main extends PluginBase implements Listener{
                $sender->setAllowFlight(false);
                $sender->setFlying(false);
                $sender->sendMessage(self::PREFIX . TextFormat::RED . "Fly has been disabled!");
-             }else{
-               if($sender->isSurvival()){
-                 $sender->sendMessage(self::PREFIX . TextFormat::RED . "You can only use this command in survival");
-                 return false;
-               }
              }
            }else{
              $sender->sendMessage(self::PREFIX . TextFormat::RED . "You haven't the permissions to use this command!");
@@ -59,7 +55,7 @@ class Main extends PluginBase implements Listener{
            }
         }
         return true;
-     }
+    }
 	
     public function onDamage(EntityDamageEvent $event) : void{
         $entity = $event->getEntity();
