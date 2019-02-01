@@ -1,11 +1,11 @@
 name: CoolFly
 main: CoolFly\Main
 version: 1.0.0
-api: [3.5.6, 3.0.0, 4.0.0]
+api: [3.5.6]
 author: benzodoespvp
 description: Advanced Fly Plugin
+
 commands:
- fly:
-  description: "Enables /fly"
-  permissions:
-   fly.use
+    fly:
+       description: Enable fly
+       permission: fly.use
