@@ -9,4 +9,3 @@ commands:
   description: "Enables /fly"
   permissions:
    fly.use
-    default: op
