@@ -43,8 +43,8 @@ use pocketmine\utils\TextFormat;
 					$sedner->setFlying(true);
 					$sender->sendMessage(Main::PREFIX . TextFormat::GOLD . "You may now fly!");
 				}else{
-					$sender->setAllowFlight(false)
-					$sender->setFlying(false)
+					$sender->setAllowFlight(false);
+					$sender->setFlying(false);
 					$sender->sendMessage(Main::PREFIX . TextFormat::RED . "Fly has been disabled!");
 					
 				}else{
@@ -66,7 +66,7 @@ use pocketmine\utils\TextFormat;
 						return false;
 				}
 			}
-	    }
+	    	}
 	
 		public function onDamage(EntityDamageEvent $event) : void{
 			$entity = $event->getEntity();
