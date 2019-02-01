@@ -12,12 +12,10 @@
 
 declare(strict_types=1);
 
-
 namespace Coolfly\Main;
 
 use pocketmine\PluginBase;
 use pocketmine\event\Listener;
-use pocketmine\event\player\PlayerJoinEvent;
 use pocketmine\event\entity\EntityDamageEvent;
 use pocketmine\event\entity\EntityDamageByEntityEvent;
 use pocketmine\command\Command;
@@ -34,7 +32,7 @@ class Main extends PluginBase implements Listener{
      }
 
      public function onCommand(Command $command, CommandSender $sender, string $label, array $args) : bool{
-         if(!sender instanceof Player){
+         if(!$sender instanceof Player){
            $sender->sendMessage(self::PREFIX . TextFormat::GOLD . "Use this command in-game!");
            return false;
          }
@@ -59,9 +57,9 @@ class Main extends PluginBase implements Listener{
              $sender->sendMessage(self::PREFIX . TextFormat::RED . "You haven't the permissions to use this command!");
              return false;
            }
-         }
-         return true;
-    }
+        }
+        return true;
+     }
 	
     public function onDamage(EntityDamageEvent $event) : void{
         $entity = $event->getEntity();
